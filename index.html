@@ -14,6 +14,7 @@
         <div class="container-fluid bg-success">
           <a class="navbar-brand text-light">Market Book</a>
           <form class="d-flex" role="search">
+            <button href="#carrello" class="me-4 ">Vai al Carrello</button>
             <input class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search">
             <button class="btn btn-outline-success bg-dark text-light" type="submit" id="cerca">Cerca</button>
           </form>
@@ -24,13 +25,18 @@
       <div class="container" id="album-container"></div>
 
 
+      
 
 
       <!-- Carrello  -->
 
       <div>
         <h2 class="p-3 mt-3">Carrello</h2>
-         <div class="row"  id="carrello"></div>
+        <span id="totale"></span>
+        <button id="svuota" class="w-30">Svuota</button>
+         <div class="row"  id="carrello">
+          
+         </div>
 
       </div>
 
