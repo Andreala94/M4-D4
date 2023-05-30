@@ -99,7 +99,7 @@ getAlbum();
 let clearButton = document.getElementById("svuota");
 
 clearButton.addEventListener("click", () => {
-    // carrello.innerHTML = "";
+    
     let items = document.querySelectorAll(".selezionato");
     for (let i = 0; i < items.length; i++) {
         items[i].click();
