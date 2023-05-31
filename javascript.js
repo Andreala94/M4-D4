@@ -4,17 +4,7 @@ let carrello = document.getElementById("carrello")
 let libri = document.getElementById("album-container");
 let totale = 0;
 let totaleCarrello = document.getElementById("totale");
-
-
-
-
-
 let infoBtn = document.getElementsByClassName("btn-info");
-
-
-
-
-
 
 
 const getAlbum = () => {

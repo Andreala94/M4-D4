@@ -18,6 +18,7 @@ function dettagli(libbro){
     let card = document.createElement("div");
     card.classList.add("card")
     let img = document.createElement("img");
+    img.classList.add("h-100")
     img.src = libbro.img;
     let title = document.createElement("h2");
     title.innerText = libbro.title;
