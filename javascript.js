@@ -5,6 +5,18 @@ let libri = document.getElementById("album-container");
 let totale = 0;
 let totaleCarrello = document.getElementById("totale");
 
+
+
+
+
+let infoBtn = document.getElementsByClassName("btn-info");
+
+
+
+
+
+
+
 const getAlbum = () => {
 
     fetch('https://striveschool-api.herokuapp.com/books')
@@ -54,7 +66,18 @@ const getAlbum = () => {
                 bottone.textContent = "Acquista";
                 bottone.classList.add("bg-primary", "rounded-3", "text-light", "mt-auto");
                 card.appendChild(bottone);
+                // Bottone Dettagli
+                let dettagli = document.createElement("a");
+                dettagli.textContent = "Dettagli"
+                dettagli.classList.add( "btn-info","bg-warning", "rounded-3", "text-light", "mt-auto","text-dark");
+                card.appendChild(dettagli);
+                console.log(element.asin);
+                dettagli.href = "dettagli.html?id=" + element.asin;
 
+               
+
+
+            
                 // evento per mettere il bordo colorato
                 bottone.addEventListener("click", () => {
 
@@ -65,7 +88,6 @@ const getAlbum = () => {
                     if (card.classList.contains("border-danger")) {
                         let elCarrello = col.cloneNode(true);
                         elCarrello.id = card.id + "carrello"
-                        // carrello.innerHTML += (elCarrello.outerHTML)
                         carrello.appendChild(elCarrello)
                         bottone.textContent = "Rimuovi";
                         totale += prezzo;
@@ -83,12 +105,13 @@ const getAlbum = () => {
                 col.appendChild(card)
                 row.appendChild(col)
 
+
                 counter++;
             });
 
             console.log(data);
         })
-        .catch((err) => { console.log("Hai un errore:" + err) });;
+        .catch((err) => { console.log("Hai un errore:" + err) });
 
 }
 
@@ -107,6 +130,12 @@ clearButton.addEventListener("click", () => {
 
 });
 
+// let inputSearch = document.getElementById("search");
 
-
-
+// inputSearch.addEventListener("keydown", () => {
+    
+//     let searchLetter = response.filter(book => book.title.toUpperCase().includes(inputSearch.value.toUpperCase()))
+//      getAlbum(searchLetter);
+    
+//     console.log(searchLetter);
+// })
