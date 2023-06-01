@@ -39,6 +39,11 @@ const getAlbum = () => {
                 img.src = immagine;
                 card.appendChild(img)
 
+                let divIcona = document.createElement("div")
+                let icona = document.createElement('i');
+                icona.className = "trash-outline";
+                divIcona.appendChild(icona);
+
                 // Aggiungi un paragrafo
                 let paragrafo = document.createElement("p");
                 paragrafo.classList.add("fw-bold", "p-1", "mt-3")
@@ -120,12 +125,12 @@ clearButton.addEventListener("click", () => {
 
 });
 
+
 let inputSearch = document.getElementById("search");
 
 inputSearch.addEventListener("keydown", () => {
-    
-    let searchLetter = response.filter(book => book.title.toUpperCase().includes(inputSearch.value.toUpperCase()))
-     data(searchLetter);
-    
-    console.log(searchLetter);
-})
+  let searchLetter = response.filter(data =>
+    data.title.toUpperCase().includes(inputSearch.value.toUpperCase())
+  );
+  console.log(searchLetter);
+});
