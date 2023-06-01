@@ -120,12 +120,12 @@ clearButton.addEventListener("click", () => {
 
 });
 
-// let inputSearch = document.getElementById("search");
+let inputSearch = document.getElementById("search");
 
-// inputSearch.addEventListener("keydown", () => {
+inputSearch.addEventListener("keydown", () => {
     
-//     let searchLetter = response.filter(book => book.title.toUpperCase().includes(inputSearch.value.toUpperCase()))
-//      getAlbum(searchLetter);
+    let searchLetter = response.filter(book => book.title.toUpperCase().includes(inputSearch.value.toUpperCase()))
+     data(searchLetter);
     
-//     console.log(searchLetter);
-// })
+    console.log(searchLetter);
+})
