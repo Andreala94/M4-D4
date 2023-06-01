@@ -5,8 +5,8 @@ let libri = document.getElementById("album-container");
 let totale = 0;
 let totaleCarrello = document.getElementById("totale");
 let infoBtn = document.getElementsByClassName("btn-info");
-
-
+let inputSearch = document.getElementById("search");
+let dataLibri;
 const getAlbum = () => {
 
     fetch('https://striveschool-api.herokuapp.com/books')
@@ -16,7 +16,8 @@ const getAlbum = () => {
             let row = document.createElement("div")
             row.classList.add("row")
             libri.appendChild(row)
-
+            
+             dataLibri = data;
             let counter = 0;
 
 
@@ -75,7 +76,12 @@ const getAlbum = () => {
                 rimuoviCard.id = "#rimuovi"
                 card.appendChild(rimuoviCard);
 
-               
+                // let removeButtons = document.getElementById("#rimuovi");
+                // button.addEventListener("click", () => {
+                  
+                //   let card = button.parentNode;
+                //   card.remove();
+                //  });
 
 
             
@@ -131,20 +137,21 @@ clearButton.addEventListener("click", () => {
 
 });
 
-let removeButtons = document.getElementById("#rimuovi");
 
- removeButtons.forEach(function(button) {
-   button.addEventListener("click", function() {
-     // Rimuovi la card genitore del bottone cliccato
-     let card = button.parentNode;
-     card.remov();
-    });
-});
 
-let inputSearch = document.getElementById("search");
+//  removeButtons.forEach(function(button) {
+//    button.addEventListener("click", function() {
+
+//      let card = button.parentNode;
+//      card.remov();
+//     });
+// });
+
+
 
 inputSearch.addEventListener("keydown", () => {
-  let searchLetter = response.filter(data =>
+  console.log(inputSearch.value)
+  let searchLetter = dataLibri.filter(data =>
     data.title.toUpperCase().includes(inputSearch.value.toUpperCase())
   );
   console.log(searchLetter);
