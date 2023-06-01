@@ -69,6 +69,12 @@ const getAlbum = () => {
                 console.log(element.asin);
                 dettagli.href = "dettagli.html?id=" + element.asin;
 
+                //bottone "Salta"
+                let rimuoviCard = document.createElement("button");
+                rimuoviCard.textContent = "salta";
+                rimuoviCard.id = "#rimuovi"
+                card.appendChild(rimuoviCard);
+
                
 
 
@@ -125,6 +131,15 @@ clearButton.addEventListener("click", () => {
 
 });
 
+let removeButtons = document.getElementById("#rimuovi");
+
+ removeButtons.forEach(function(button) {
+   button.addEventListener("click", function() {
+     // Rimuovi la card genitore del bottone cliccato
+     let card = button.parentNode;
+     card.remov();
+    });
+});
 
 let inputSearch = document.getElementById("search");
 
