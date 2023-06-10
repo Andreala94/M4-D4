@@ -57,11 +57,12 @@ const getAlbum = () => {
                 prezzoBook.classList.add("fw-bold")
                 card.appendChild(prezzoBook);
 
-                // Aggiungi un bottone
+                // Aggiungi un bottone acquista
                 let bottone = document.createElement("button");
                 bottone.textContent = "Acquista";
                 bottone.classList.add("bg-primary", "rounded-3", "text-light", "mt-auto");
                 card.appendChild(bottone);
+
                 // Bottone Dettagli
                 let dettagli = document.createElement("a");
                 dettagli.textContent = "Dettagli"
@@ -76,16 +77,8 @@ const getAlbum = () => {
                 rimuoviCard.id = "#rimuovi"
                 card.appendChild(rimuoviCard);
 
-                // let removeButtons = document.getElementById("#rimuovi");
-                // button.addEventListener("click", () => {
-                  
-                //   let card = button.parentNode;
-                //   card.remove();
-                //  });
-
-
-            
-                // evento per mettere il bordo colorato
+                        
+                // evento per mettere il bordo colorato aò click su acquista
                 bottone.addEventListener("click", () => {
 
                     card.classList.toggle("border-danger")
@@ -136,16 +129,6 @@ clearButton.addEventListener("click", () => {
     }
 
 });
-
-
-
-//  removeButtons.forEach(function(button) {
-//    button.addEventListener("click", function() {
-
-//      let card = button.parentNode;
-//      card.remov();
-//     });
-// });
 
 
 
